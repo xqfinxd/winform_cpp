@@ -1,0 +1,8 @@
+#Project
+*.user
+*/.vs
+/.vs
+/x64
+*/x64
+/packages
+!*.dll
