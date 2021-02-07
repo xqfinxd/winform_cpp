@@ -14,6 +14,10 @@ public:
 	void Run();
 	void RefreshEvents(bool clear);
 	size_t CollectEvents();
+	void OnEvent();
+
+	void OnMouse(uint32_t type, uint32_t button, uint8_t clicks);
+	void OnKeyboard(uint32_t type, uint32_t button, uint8_t repeat);
 
 private:
 	Data _data = nullptr;
