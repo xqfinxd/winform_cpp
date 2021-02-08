@@ -21,6 +21,9 @@
     <ClCompile Include="application.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="dialog.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -30,6 +33,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="applicationdata.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogdata.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="guimanager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
