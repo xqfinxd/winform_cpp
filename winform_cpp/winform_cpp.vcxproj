@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="application.cc" />
     <ClCompile Include="dialog.cc" />
+    <ClCompile Include="guimanager.cpp" />
     <ClCompile Include="main.cc" />
   </ItemGroup>
   <ItemGroup>

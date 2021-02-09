@@ -1,6 +1,8 @@
 #include "application.h"
 #include "applicationdata.h"
+#include "guimanager.h"
 
+INIT_SINGLETON(Application);
 
 Application::Application() {
 	_data = std::make_unique<ApplicationData>();
@@ -11,12 +13,24 @@ Application::~Application() {
 }
 
 void Application::Run() {
+	auto guimanager = std::make_unique<GuiManager>();
 	_data->running = true;
+	int64_t delay = 1000 / _data->framenrate;
 	do {
+		int64_t begintime = SDL_GetTicks();
 		RefreshEvents(true);
 		auto eventnums = CollectEvents();
 		OnEvent();
-		
+
+		SDL_SetRenderDrawColor(_data->renderer.get(), 255, 255, 255, 255);
+		SDL_RenderClear(_data->renderer.get());
+		guimanager->Run(delay / 1000.f);
+		int64_t endtime = SDL_GetTicks();
+		if (endtime - begintime < delay) {
+			uint32_t delta = (uint32_t)(delay - (endtime - begintime));
+			SDL_Delay(delta);
+		}
+		SDL_RenderPresent(_data->renderer.get());
 	} while (_data->running);
 }
 
@@ -76,4 +90,24 @@ void Application::OnMouse(uint32_t type, uint32_t button, uint8_t clicks) {
 
 void Application::OnKeyboard(uint32_t type, uint32_t button, uint8_t repeat) {
 	printf("keyboard click %d %d\n", button, repeat);
+	if (button == SDL_SCANCODE_O) {
+		auto dialog = GuiManager::GetSingleton()->AddDialog("o");
+		dialog->SetX(0);
+		dialog->SetY(0);
+		dialog->SetW(100);
+		dialog->SetH(100);
+	}
+	if (button == SDL_SCANCODE_C) {
+		auto dialog = GuiManager::GetSingleton()->AddDialog("c");
+		dialog->SetX(200);
+		dialog->SetY(200);
+		dialog->SetW(100);
+		dialog->SetH(100);
+	}
+}
+
+void Application::DrawRect(int32_t x, int32_t y, uint32_t w, uint32_t h) {
+	SDL_Rect rect{ x, y, (int)w, (int)h };
+	SDL_SetRenderDrawColor(_data->renderer.get(), 255, 0, 0, 0);
+	SDL_RenderDrawRect(_data->renderer.get(), &rect);
 }

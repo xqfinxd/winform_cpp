@@ -15,6 +15,7 @@ struct ApplicationData {
 	Renderer renderer = nullptr;
 	EventQueue events{};
 	bool running = false;
+	uint32_t framenrate = 60;
 	struct {
 		int x = 0, y = 0;
 		uint8_t clicks = 0;
