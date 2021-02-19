@@ -2,7 +2,7 @@
 
 #include <cassert>
 
-//单例访问方式接口，对象的声明周期需要自己控制
+//单例访问方式接口，对象的生命周期需要自己控制
 template <typename T>
 class Singleton {
 public:
