@@ -151,14 +151,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="application.cc" />
+    <ClCompile Include="general\base.cc" />
+    <ClCompile Include="general\event_type.cc" />
+    <ClCompile Include="input.cc" />
     <ClCompile Include="main.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="base.h" />
-    <ClInclude Include="singleton.h" />
+    <ClInclude Include="application.h" />
+    <ClInclude Include="general\event_type.h" />
+    <ClInclude Include="iapplication.h" />
+    <ClInclude Include="general\base.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="general\singleton.h" />
+    <ClInclude Include="subsystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -13,9 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="general">
+      <UniqueIdentifier>{f88c07d9-1579-480c-9d19-a68b2ac27dcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="application.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="general\base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="general\event_type.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -23,10 +38,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="singleton.h">
+    <ClInclude Include="iapplication.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="base.h">
+    <ClInclude Include="application.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="subsystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="general\base.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="general\singleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="general\event_type.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
